@@ -5,6 +5,76 @@ $container['router'] = function() use ($defaultModule, $modules) {
 	$router = new \Phalcon\Mvc\Router(false);
 	$router->clear();
 
+	$router->add(
+		'/dashboard/post/show/{postid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'post',
+			'action' => 'show'
+		]
+	);
+
+	$router->add(
+		'/dashboard/post/delete/{postid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'post',
+			'action' => 'delete'
+		]
+	);
+
+	$router->add(
+		'/dashboard/post/edit/{postid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'post',
+			'action' => 'edit'
+		]
+	);
+
+	$router->add(
+		'/dashboard/post/save/{postid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'post',
+			'action' => 'save'
+		]
+	);
+
+	$router->add(
+		'/dashboard/comment/upvote/{commentid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'comment',
+			'action' => 'upvote'
+		]
+	);
+
+	$router->add(
+		'/dashboard/comment/create/{postid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'comment',
+			'action' => 'create'
+		]
+	);
+
+	$router->add(
+		'/dashboard/comment/delete/{commentid:[0-9]+}',
+		[
+			'namespace' => 'Its\Example\Dashboard\Presentation\Web\Controller',
+			'module' => 'dashboard',
+			'controller' => 'comment',
+			'action' => 'delete'
+		]
+	);
+
 	/**
 	 * Default Routing
 	 */
