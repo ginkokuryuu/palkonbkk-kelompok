@@ -56,7 +56,10 @@ class SearchController extends Controller
         );
 
         $page = $paginator->paginate();
+
+        $urlNow = "/dashboard/search/bytag/" . $posttag;
         
         $this->view->setVar('page', $page);
+        $this->view->currurl = $urlNow;
     }
 }

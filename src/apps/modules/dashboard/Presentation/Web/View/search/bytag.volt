@@ -30,10 +30,10 @@
         </a>
         {% endfor %}
         
-        <a href="/dashboard" style="color: white;">First</a>
-        <a href="/dashboard?page=<?= $page->getPrevious(); ?>" style="color: white;">Previous</a>
-        <a href="/dashboard?page=<?= $page->getNext(); ?>" style="color: white;">Next</a>
-        <a href="/dashboard?page=<?= $page->getLast(); ?>" style="color: white;">Last</a>
+        <a href="{{ currurl }}" style="color: white;">First</a>
+        <a href="{{ currurl }}?page=<?= $page->getPrevious(); ?>" style="color: white;">Previous</a>
+        <a href="{{ currurl }}?page=<?= $page->getNext(); ?>" style="color: white;">Next</a>
+        <a href="{{ currurl }}?page=<?= $page->getLast(); ?>" style="color: white;">Last</a>
 
         <p style="color: white;">Page {{ page.getCurrent() }} of {{ page.getLast() }}</p>
     </div>
