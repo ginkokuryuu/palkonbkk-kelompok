@@ -31,4 +31,32 @@ class SearchController extends Controller
         
         $this->view->posts = $listSearched;
     }
+
+    public function bytagAction($posttag){
+        $currentPage = $this->request->getQuery('page', 'int', 1);
+        
+        $builder = $this
+            ->modelsManager
+            ->createBuilder()
+            ->columns("id, username, title, content, comments, created_at")
+            ->from(Posts::class)
+            ->where(
+                "type = :tag:",
+                [
+                   "tag" => $posttag, 
+                ])
+            ->orderBy("created_at DESC");
+    
+        $paginator = new QueryBuilder(
+            [
+                "builder" => $builder,
+                "limit"   => 10,
+                "page"    => $currentPage,
+            ]
+        );
+
+        $page = $paginator->paginate();
+        
+        $this->view->setVar('page', $page);
+    }
 }

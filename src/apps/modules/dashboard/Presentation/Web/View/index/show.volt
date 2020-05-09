@@ -11,14 +11,6 @@
         {% else %}
         <h4>Hello, guest!</h4>
         {% endif %}
-
-        <div class="list-group">
-            <a href="/dashboard/search/bytag/0/" class="list-group-item list-group-item-action">Game Dev</a>
-            <a href="/dashboard/search/bytag/1/" class="list-group-item list-group-item-action">Android Dev</a>
-            <a href="/dashboard/search/bytag/2/" class="list-group-item list-group-item-action">Data Mining</a>
-            <a href="/dashboard/search/bytag/3/" class="list-group-item list-group-item-action">TCyber</a>
-            <a href="/dashboard/search/bytag/4/" class="list-group-item list-group-item-action">Competitive Programming</a>
-          </div>
     </div>
     <div class="col-md-7" style="background-color: #88958D; padding: 20px; padding-top: 40px; padding-bottom: 40px;">
         {% for controller, post in page.getItems() %}

@@ -12,6 +12,16 @@
         <form action="create" role="form" method="POST" id="newPost">
             <fieldset>
                 <div class="form-group">
+                    <label for="type">Tag:</label>
+                    <select name="type" class="form-control">
+                        <option value="0">Game Dev</option>
+                        <option value="1">Android Dev</option>
+                        <option value="2">Data Mining</option>
+                        <option value="3">TCyber</option>
+                        <option value="4">Competitive Programming</option>
+                    </select>                      
+                </div>
+                <div class="form-group">
                     <label for="title">Title</label><br>
                     <input type="text" name="title" class="form-control form-control-lg"><br>
                 </div>

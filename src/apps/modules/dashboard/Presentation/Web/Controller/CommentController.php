@@ -24,7 +24,13 @@ class CommentController extends Controller
                 $newComment = new Comments();
                 $newComment->registerData($data);
 
-                $newComment->save();
+                if($newComment->save()){
+                    $post = Posts::findFirstById($postid);
+                    $post->comments = $post->comments + 1;
+    
+                    $post->save();
+                }
+
             }
         }
 
